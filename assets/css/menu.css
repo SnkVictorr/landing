@@ -1,69 +1,91 @@
-.menu {
-
-    position: fixed; /*Faz com que o conteudo seja rolado junto da pagina */
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    border-bottom: 0.1rem solid var(--light-gray-color); /*coloca uma bordinha embaixo do menu */
-    z-index: 1;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.menu-content { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /*alinhando entre o topo e o bottom */
-    padding-bottom: 0;
-    padding-top: 0;
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Open Sans', sans-serif; */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color); /*Deixando com a cor da variavel */
+    line-height: 1.5; /*Aumentando os espaços entre as linhas */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
 
 }
 
-.menu ul {
-    list-style: none;
-    display: flex;
+h1 {
+    font-size: 6rem;
+    text-transform:uppercase;
 }
 
-.menu h1 {
-    font-size: 2.3rem;
+h2 {
+    font-size: 6rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
-.menu h1 a{
-    color: var(--primary-color);
+
+h3 {
+    font-size: 5rem;
+}
+
+h4 {
+    font-size: 4.5rem;
+}
+
+h5 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 3.5rem;
+}
+
+p {
+    margin-bottom: 3rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%
 }
 
 
-.menu nav ul a {
-     /*Herdando a cor da classe pai*/
-     color: var(--primary-color);
+table td, table th{
+    /* criando a linha ao redor da tabela */
+    border: 0.1rem solid var(--light-gray-color);
+    padding: 1rem;
+    text-align: left;
+    white-space: nowrap; /*Faz com que o texto n quebre, mas deixa a tabela muito grande se tiver um texto grande dentro */
     
 }
-a {
-    text-decoration: none;
-    
-}
 
-
-
-.menu ul li a{
-    display: block; 
-    padding: 2rem;
+table caption {
+    text-align: left;
     font-size: 1.8rem;
-    position: relative; /* Definindo a position: relative para funcionar o ::after */
-}
-
-/*Criando um efeito de transição que coloca um linha em baixo ao passar o mouse */
-.menu ul li a::after {
-    content: ''; /*Adiciona um conteudo vazio */
-    position: absolute; 
-    bottom: 1.0rem;
-    left: 50%;
-    width: 0;
-    height: 0.2rem;
-    background-color: var(--secondary-color);
-    transition: all 300ms ease-in-out;
+    font-style: italic;
+    margin-bottom: 1rem;
 
 }
-.menu ul li a:hover::after {
-    width: 50%;
-    left: 25%;
+
+.responsive-table {
+    min-width: 100%;
+    overflow-x: auto;
+
+}
+
+table tfoot, table th{
+    background-color: var(--light-gray-color);
 }
