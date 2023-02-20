@@ -1,0 +1,299 @@
+/* Google Fonts: https://fonts.google.com/ 
+    https://www.svgbackgrounds.com/
+    https://codepen.io/luizomf/full/KKNwMeG*/
+
+.intro-content {
+    position: relative;
+    /* top: -8rem; */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    /* align-tems e justify-cotent funcionam com grids */
+    min-height: 100vh;
+}
+
+/*Deixando a coluna dentrro da grid com display flex */
+.intro-text-content,
+.intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+
+.intro-img img,
+.intro-img svg {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.top3-content {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 64rem;
+}
+
+.grid-one-content {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+
+.grid-main-heading {
+    margin-bottom: 1rem;
+}
+
+.grid-description {
+    padding-bottom: 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*Cria 3 colunas com 1fr de espaço em cada*/
+    gap: var(--gap);
+    counter-reset: grid-counter;
+    /*Criando um contador */
+}
+
+.grid h3 {
+    font-size: 3rem;
+    position: relative;
+    /*Faz com que o conteudo filho fique posicionado em relação oa elemento pai */
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+.grid h3::before {
+    counter-increment: grid-counter;
+    /*Incrementando o contador grid-counter*/
+    content: counter(grid-counter);
+    /*Mostrando o contador*/
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: -2rem;
+    transform: rotate(5deg);
+    /* Gira o conteudo em 5 graus */
+
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+
+}
+
+.gallery-img:hover {
+
+    /* Transform Css: https://css-tricks.com/almanac/properties/t/transform/ */
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+    /*translate move a imagem(+direita/-esquerda, +baixo/-cima), scale aumenta ou diminui a imagem */
+
+}
+
+.grid-two-content h2 {
+    padding-bottom: 7rem;
+
+}
+
+.contact-form {
+    grid-column: span 2;
+}
+
+.contact-form .form-grid {
+    border: none;
+    /*Removendo a borda */
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap);
+}
+
+.form-grid legend {
+    font-style: italic;
+    font-style: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    flex: 1 1 32rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    border: none;
+    background-color: var(--white-color);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 3rem;
+    outline: none;
+    /* Cria uma borda VISUAL ao redor de um elemento */
+    /* "outline-width": define a espessura da linha do "outline".
+    "outline-style": define o estilo da linha do "outline", como sólido, tracejado ou pontilhado.
+    "outline-color": define a cor da linha do "outline".
+    "outline-offset": define o afastamento entre o "outline" e o elemento.
+    } */
+}
+
+
+/* Muda o estilo da borda, substituindo o outline */
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 10px 2px var(--secondary-color);
+
+}
+
+.form-group button {
+    border: 0.5rem solid var(--white-color);
+    background-color: var(--white-color);
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+}
+
+.form-group button {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+
+}
+
+.form-group ::placeholder {
+    color: var(--light-gray-color);
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.6rem;
+
+}
+
+.footer a {
+    color: var(--primary-color);
+}
+
+.heart {
+    color: var(--secondary-color);
+}
+
+.footer p {
+    margin: 0;
+    padding: 3rem;
+}
+
+/* Criando uma setinha que faz o conteudo ir pro topo */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--white-color);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--primary-color);
+    transform: rotate(-90deg);
+    border: 0.1rem solid var(--primary-color); 
+}
+
+
+/* Input do menu */
+.close-menu {
+    display: none;
+}
+
+@media (max-width: 800px) {
+
+    .intro-content,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+
+    }
+
+    .gallery-img img {
+        width: 100%;
+    }
+
+    .grid-one-content {
+        display: block;
+        /*Mudar o tipo de display pode ajudar se os elementos n se ajustarem conforme esperado; */
+    }
+
+    .menu {
+        text-align: center;
+        bottom: 0;
+        /* Escondendo o menu para que depois seja aberto ao apertar o botao de abrir o menu */
+        display: none;
+    }
+
+    .menu-content,
+    .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-content {
+        height: 100vh;
+    }
+
+
+    /* Criando um botao ☰ pra abrir o menu */
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    /* Quando o Input estiver checked o menu terá display block e vai abrir o menu. Se estiver unchecked vai fechar  */
+    .close-menu:checked~.menu {
+        display: block;
+
+    }
+
+    /* Quando o input estiver checked, o × vai substituir o ☰ */
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+    }
+
+    /* Tirando o espaço branco do menu que havia sido colocado */
+    .menu-spacing {
+        display: none;
+    }
+}
